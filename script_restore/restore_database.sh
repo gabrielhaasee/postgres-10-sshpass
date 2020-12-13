@@ -16,12 +16,12 @@ set -e
 NOW=$(date +"%Y%m%d") -1
 NOW=$((NOW-1))
 
-DUMP='dump_GURI_PROD_'$NOW'_220001.dmp'
+DUMP='NEME_DUMP'
 
 BACKUP_DIR=/var/lib/postgresql/data
 
-DATABASE=guri_prod
-DATABASE_OLD=guri_prod_old
+DATABASE=DATABASE
+DATABASE_OLD=DATABASE_OLD
 
 COMIENZODIA=$(date +"%Y_%m_%d")
 COMIENZOHORA=$(date +"%T")
