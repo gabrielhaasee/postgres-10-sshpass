@@ -1,0 +1,30 @@
+version: '2.2'
+services:
+
+  database:
+    image: postgres:10
+    environment:
+     - POSTGRES_PASSWORD=test
+     - POSTGRES_USER=test
+     - POSTGRES_DB=test
+    volumes:
+     - $PWD/database:/var/lib/postgresql/data
+    ports:
+     - "5431:5432"
+    networks:
+     - integracion
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "1"
+
+networks:
+  integracion:
+      driver: bridge
+      ipam:
+        driver: default
+        config:
+         - subnet: 167.228.0.0/16
+
