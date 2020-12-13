@@ -215,6 +215,9 @@ STOPSIGNAL SIGINT
 # documentation at https://www.postgresql.org/docs/12/server-start.html notes
 # that even 90 seconds may not be long enough in many instances.
 
+RUN mkdir /var/lib/postgresql/restore
+COPY script_restore/restore_database.sh /var/lib/postgresql/restore
+
 EXPOSE 5432
 CMD ["postgres"]
 
